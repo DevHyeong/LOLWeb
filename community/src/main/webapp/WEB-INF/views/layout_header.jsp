@@ -29,21 +29,21 @@
 	
 	}
 	.nav-header{
-		position:relative;
+		display:table;
+		width:100%;
 		height:50px;	
 	
 	
 	}
 	
+	
 	.layout-top-sub{
-		display:inline-block;
+		display:table-cell;
+		
+		vertical-align:middle;
 		text-align:center;
 		
-		
-		position:absolute;
-		top:7px;
-		
-		left:400px;
+		width:65%;
 	
 	}
 	
@@ -69,11 +69,12 @@
 	}
 	
 	.layout-top-search{
-		position:absolute;
-		top:7px;
+		width:20%;
+		display:table-cell;
 		
-		right:200px;
-		display:inline-block;
+		vertical-align:middle;
+		
+		position:relative;
 	
 	
 	
@@ -88,22 +89,22 @@
 	.layout-top-search button{
 		border:0;
 		position:absolute;
-		top:10px;
-		right:0;
+		top:17px;
+		right:75px;
 		background:none;
 	
 	}
 	.layout-top-login{
-		display:inline-block;
-		position:absolute;
+		display:table-cell;
 		
-		right:80px;
+		vertical-align:middle;
+		
+		width:15%;
 		
 		
 	}
 	.login-btn{
-		padding:14px 0px 14px;
-	
+		
 	}
 	
 	.login-btn a{
@@ -116,6 +117,18 @@
 		color:#007bff;
 	
 	}
+	
+	.login-btn>a>span>img{
+		width:24px;
+		height:24px;
+	
+	}
+	.login-btn>a>span{
+		font-size:12px;
+		color:#666;
+	
+	}
+	
 	
 	
 </style>
@@ -154,8 +167,18 @@
 				<div class="login-btn">
 				<c:choose>
 					<c:when test="${sessionScope.user ne null }">
+						<c:choose>
+						<c:when test="${sessionScope.user.type eq 'naver'}">
+						<a href="/naverlogout">${sessionScope.user.nickname }님
+						<span>(<img src="/resources/img/naver.jpg">간편로그인)</span></a>
+						</c:when>
+						<c:otherwise>
+						
 						<a href="/logout">${sessionScope.user.nickname }님</a>
+						</c:otherwise>
+						</c:choose>
 					</c:when>
+					
 					<c:otherwise>
 					
 						<a href="/login">로그인</a>

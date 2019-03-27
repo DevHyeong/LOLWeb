@@ -350,7 +350,7 @@
 	    
 </head>
 	<body>
-	<jsp:include page="../header.jsp" flush="false"/>
+	<jsp:include page="../layout_header.jsp" flush="false"/>
 		
 		
 		

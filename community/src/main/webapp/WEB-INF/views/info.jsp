@@ -32,42 +32,13 @@
 	<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<base href="/"> 
+	<link rel="stylesheet" type="text/css" href="resources/css/Community.css">
 	
 	
     <!-- Bootstrap CSS -->
 	<style>
-		.header-search{
-			width:750px;
-			margin: 0 auto;
-			padding-bottom: 5px;
 		
-		}	
-		.main-content{
-			padding-top:40px;
-			width:1000px;
-			margin:0 auto;
-			min-height:600px;
-			padding-bottom: 120px;
-			
-			
-		}
-		.side-bar{
-			display:block;
-			width: 210px;
-			float:left;
-		
-		}
-		
-		.content{
-			width:790px;
-			float:right;
-			padding-bottom:100px;
-		
-		}
-		
-		.article{
-			background:#fff;
-		}
 		
 		.article-header{
 			padding-top:24px;
@@ -357,6 +328,12 @@
 		}
 		
 		
+		.footer{
+			height:100px;
+		
+		}
+		
+		
 		
 	</style>
 	<script>
@@ -635,11 +612,23 @@
 	<body>
 	
 	<jsp:include page="layout_header.jsp" flush="false"/>
-	
+	<div class="l-wrap">
 	<div class="main-content">
 		
 		<div class="side-bar">
-			<div>전체</div>
+			<div class="sidebar-menu">
+				<ul class="sidebar-items">
+					<li>
+						<a href="#" onclick="dateFormat()">
+							전체
+						</a>
+					</li>
+				
+				</ul>
+			
+			
+			
+			</div>
 		
 		</div>
 		<div class="content">
@@ -836,12 +825,11 @@
 		
 		
 	</div>
+	
 	<div class="footer">
-			
-		
-		
-		</div>
-  	
+	
+	</div>
+	</div>
   	<!-- Optional JavaScript -->
     <!-- 먼저 jQuery가 오고 그 다음 Popper.js 그 다음 Bootstrap JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>

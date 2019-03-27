@@ -29,6 +29,9 @@
 	<!-- 부가적인 테마 -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 	
+	<link rel="stylesheet" type="text/css" href="resources/css/Community.css">
+	
+	
 	<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 	
@@ -36,198 +39,12 @@
 	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/editor/js/HuskyEZCreator.js" charset="utf-8"></script>
 	
 	
-    <!-- Bootstrap CSS -->
-	<style>
-		.header-search{
-			width:750px;
-			margin: 0 auto;
-			padding-bottom: 5px;
-		
-		}	
-		.main-content{
-			
-			width:1000px;
-			margin:0 auto;
-			min-height:700px;
-			padding-bottom: 120px;
-			
-			
-		}
-		.side-bar{
-			
-			
-			display:block;
-			width: 210px;
-			float:left;
-			text-align:center;
-			height:auto;
-			
-		
-		}
-		
-		.sidebar-menu{
-			border-top:1px solid #ebeef1;
-			margin-top:12px;
-			padding-top:12px;
-		
-		
-		}
-		.sidebar-items{
-			list-style:none;
-			padding-left:0;
-			
-			
-		}
-		
-		
-		
-		.login-btn{
-			padding:12px;
-			
-		
-		}
-		.button{
-			display:block;
-			width:100%;
-			background-color:#5abef5;
-			border-color:#5abef5;
-			color:#fff;
-			line-height:20px;
-			padding:10px;
-			border-radius:4px;
-		
-		}
-		
-		
-		
-		.content{
-			width:790px;
-			float:right;
-			padding:12px;
-		
-		}
-		
-		.header-content{
-			position:relative;
-			
-		}
-		
-		.sub-content{
-			margin-top:7px;
-			padding:5px;
-		
-		}
-		
-		.sub-title{
-			font-size:18px;
-		
-		}
-		
-		.sub-write{
-			float:right;
-		}
-		
-		.list-sort{
-			position:absolute;
-			
-			list-style:none;
-			float: left;
-			bottom:0;
-			margin-bottom:0;
-		
-		
-		}
-		.list-sort li{
-			float: left;
-			margin-right: 20px;
-		
-		}
-		
-		.search{
-			display:block;
-			position: absolute;
-			right:0;
-			bottom:0;
-			margin-right: 6px;
-			margin-bottom: 6px;
-		
-		}
-		
-		.sub-link{
-			height: 48px;
-			
-		
-		}
-		
-		
-		a{
-			text-decoration:none!important;
-			color:inherit!important;
-		}
-		
-		
-		
-		.article-header{
-			font-size:18px;
-			color:black;
-			font-weight:700;
-		
-		}
-		
-		
-		.article-title{
-			margin-top:20px;
-			margin-bottom:10px;
-			width:723px;
-		
-		}
-		
-		
-		.article-content{
-			
-			
-		
-		
-		}
-		.writeBtn{
-			float:right;
-			margin-top:5px;
-			padding-right:40px;
-			
-		}
-		
-		.cancelbtn{
-			background-color:#fff;
-			boder-color:#fff;
-			color:#7b858e;
-			margin-right:5px;
-			line-height:30px;
-			width:70px;
-		
-		}
-		
-		#writebtn{
-			
-			width:70px;
-			background-color:#007bff;
-			border-color:#007bff;
-			color:#fff;
-			line-height:30px;
-		
-		}
-		
-		
-		
-	</style>
-	
-
-	
-	    
+       
 </head>
 	<body>
 	
-	<jsp:include page="header.jsp" flush="false"/>
-	
+	<jsp:include page="layout_header.jsp" flush="false"/>
+	<div class="l-wrap">
 	<div class="main-content">
 		
 		<div class="side-bar">
@@ -286,7 +103,7 @@
 			
 		</div>
 		
-		
+		</div>
 	</div>
   			
 	<script>

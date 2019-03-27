@@ -34,65 +34,15 @@
 	<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="resources/css/Community.css">
 	
 	
     <!-- Bootstrap CSS -->
 	<style>
 		
-		.body-content{
-			background-image:url('resources/img/main.jpg');
-			
-			height:100%;
-			
-			background-position:center;
-			background-repeat:no-repeat;
-			background-size:cover;
-		
-		}
 		
 		
-		.main-content{
-			padding-top:40px;
-			width:1000px;
-			margin:0 auto;
-			min-height:700px;
-			padding-bottom: 120px;
-			margin-bottom:60px;
-			
-		}
-		.side-bar{
-			
-			
-			display:block;
-			width: 210px;
-			float:left;
-			text-align:center;
-			height:auto;
-			
-		
-		}
-		
-		.sidebar-menu{
-			border-top:1px solid #ebeef1;
-			margin-top:12px;
-			padding-top:12px;
-		
-		
-		}
-		.sidebar-items{
-			list-style:none;
-			padding-left:0;
-			
-			
-		}
-		
-		
-		
-		.login-btn{
-			padding:12px;
-			
-		
-		}
+	
 		.button{
 			display:block;
 			width:100%;
@@ -403,7 +353,7 @@
 		
 		
 		
-	
+	<div class="l-wrap">
 	<div class="main-content">
 		
 		<div class="side-bar">
@@ -556,7 +506,11 @@
 		
 		
 	</div>
-  	
+	
+	
+	
+	
+  	</div>
   	<!-- Optional JavaScript -->
     <!-- 먼저 jQuery가 오고 그 다음 Popper.js 그 다음 Bootstrap JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>

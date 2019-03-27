@@ -6,8 +6,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.exam.community.memberMapper">
 	
 	<insert id="memberJoin" parameterType="com.exam.community.member">
-		insert into user (userid,password,username,nickname,mobile)values(#{userid},#{password},
-		#{username},#{nickname},#{mobile});
+		insert into user (userid,password,username,nickname,mobile,type)values(#{userid},#{password},
+		#{username},#{nickname},#{mobile},#{type});
 	
 	
 	</insert>

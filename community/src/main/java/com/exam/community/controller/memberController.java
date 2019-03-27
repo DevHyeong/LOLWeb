@@ -222,15 +222,27 @@ public class memberController {
     		String id = userInfo.get("id").toString();
     		String nickname = userInfo.get("nickname").toString();
     		String name = userInfo.get("name").toString();
+    		//String birthday = userInfo.get("birthday").toString();
     		
     		
     		member user = new member();
     		
     		user.setType("naver");
+    		
+    		
     		user.setUserid(id);
     		user.setUsername(name);
     		user.setNickname(nickname);
     		
+    		user.setPassword("null");
+    		user.setMobile("null");
+    		//phonenumber
+    		//
+    		if(service.idCheck(id)<=0) {
+    			service.memberJoin(user);
+        		
+    			
+    		}
     		session.setAttribute("user", user);
     		
     		
