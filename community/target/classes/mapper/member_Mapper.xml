@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.exam.community.memberMapper">
+	
+	<insert id="memberJoin" parameterType="com.exam.community.member">
+		insert into user (userid,password,username,nickname,mobile)values(#{userid},#{password},
+		#{username},#{nickname},#{mobile});
+	
+	
+	</insert>
+	
+	<select id="idCheck" parameterType="string" resultType="Integer">
+		select count(*) from user where userid = #{userID}
+	</select>
+	
+	<select id="NicknameCheck" parameterType="string" resultType="Integer">
+		select count(*) from user where nickname = #{name}
+	</select>
+	
+	<select id="login" parameterType="string" resultType="com.exam.community.member">
+		select * from user where userid = #{userid}
+	
+	
+	
+	</select>
+	
+	
+	
+
+
+</mapper>
+
+

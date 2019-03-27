@@ -1,0 +1,308 @@
+@charset "UTF-8";
+	
+	
+	.CurrentGameInfo{
+		
+		margin:20px 0;
+		width:700px;
+	
+	
+	}
+	
+	
+
+	.CurrentGameInfo>.Content{
+		border:1px solid #cdd2d2;
+		background:#f2f2f2;
+	
+	
+	
+	}
+	
+	.CurrentGameInfo>.Content>.currentNotGame{
+		padding:50px 50px;
+		text-align:center;
+	
+	
+	}
+	.CurrentGameInfo>.Content>.currentNotGame>span{
+		
+		font-size:15px;
+		font-weight:bold;
+		color:#333;
+	
+	}
+	
+	.tableTeam{
+		width:100%;
+		
+	
+	}
+	.tableTeam:after{
+		content:"";
+		clear:both;
+		display:block;
+	
+	}
+	
+	.blueteam{
+		float:left;
+		border-right:1px solid #cdd2d2;
+		
+	}
+	
+	.redteam{
+		float:right;
+	
+	}
+	.CurrentGameInfo>.Content>.tableTeam>.Table{
+		width:50%;
+		table-layout:fixed;
+		background-color:#f2f2f2;
+	}
+	
+	
+	.CurrentGameInfo>.Content>.Gametitle{
+		padding:10px 0;
+	
+	
+	}
+	.blueteam>.Header{
+		background-color:#a3cfec;
+	
+	}
+	
+	.redteam>.Header{
+		background-color:#e2b6b3;
+	
+	}
+	
+	
+	.CurrentGameInfo>.Content>.tableTeam>.Table>.Header{
+		border-top:solid 1px #cdd2d2;
+		border-bottom:solid 1px #cdd2d2;
+		
+		
+	
+	}
+	
+	
+	
+	.CurrentGameInfo>.Content>.tableTeam>.Table>.Header>.Row{
+		height:32px;
+	
+	
+	}
+	.CurrentGameInfo>.Content>.tableTeam>.Table>.Header>.Row>.teamName{
+		padding-left:15px;
+		text-align:left;
+		font-size:12px;
+		font-weight:bold;
+		color:#555e5e;
+	
+	}
+	
+	
+	.CurrentGameInfo>.Content>.tableTeam>.Table>.Header>.Row> th{
+		width:100%;
+	}
+	.CurrentGameInfo>.Content>.tableTeam>.Table>.Body>.Row{
+		height:40px;
+	
+	}
+	.CurrentGameInfo>.Content>.tableTeam>.Table>.Body>.Row>td{
+		padding:3px 0;
+		
+	
+	
+	}
+	.CurrentGameInfo>.Content>.tableTeam>.Table>.Body>.Row>.Champion{
+		padding-left:10px;
+		padding-right:4px;
+		
+	
+	}
+	.CurrentGameInfo>.Content>.tableTeam>.Table>.Body>.Row>.Champion>.champ{
+		width:30px;
+		height:30px;
+		border-radius:50%;
+		overflow:hidden;
+	}
+	.CurrentGameInfo>.Content>.tableTeam>.Table>.Body>.Row>.Champion>.champ img{
+		width:100%;
+		height:100%;
+	
+	}
+	.CurrentGameInfo>.Content>.tableTeam>.Table>.Body>.Row>.SummonerSpell{
+		
+	
+	}
+	
+	.CurrentGameInfo>.Content>.tableTeam>.Table>.Body>.Row>.SummonerSpell img{
+		display:block;
+		width:16px;
+		height:16px;
+		border-radius:2px;
+	
+	}
+	
+	
+	.CurrentGameInfo>.Content>.tableTeam>.Table>.Body>.Row>.Rune{
+	
+	}
+	.CurrentGameInfo>.Content>.tableTeam>.Table>.Body>.Row>.Rune img{
+		display:block;
+		width:16px;
+		height:16px;
+		border-radius:8px;
+	
+	}
+	
+	.CurrentGameInfo>.Content>.tableTeam>.Table>.Body>.Row>.SummonerName{
+		white-space:nowrap;
+		text-overflow:ellipsis;
+		overflow:hidden;
+	
+	}
+	.CurrentGameInfo>.Content>.tableTeam>.Table>.Body>.Row>.SummonerName a{
+		color:#555e5e;
+		font-size:11px;
+		text-decoration:none;
+	
+	}
+	.CurrentGameInfo>.Content>.tableTeam>.Table>.Body>.Row>.Tier{
+		text-align:center;
+	
+	}
+	.CurrentGameInfo>.Content>.tableTeam>.Table>.Body>.Row>.Tier>img{
+		display:block;
+		width:24px;
+		height:24px;
+		border-radius:2px;
+	
+	}
+	
+	
+	.CurrentGameInfo>.Content>.tableTeam>.Table>.Body>.Row>.TierInfo{
+		color:#555e5e;
+		font-size:13px;
+		
+	}
+	.CurrentGameInfo>.Content>.Table>.Body>.Row>.TierInfo{
+		
+	
+	}
+	
+	
+	
+	
+	.CurrentGameInfo>.Content>.Table>.Body>.Row>.WinRatio{
+	
+	
+	}
+	
+	.CurrentGameInfo>.Content>.Table>.Body>.Row>.KDA{
+	
+	
+	}
+	
+	.CurrentGameInfo>.Content>.Table>.Body>.Row>.RuneDetails{
+		
+	
+	
+	}
+	.CurrentGameInfo>.Content>.tableTeam>.Table>.Body>.Row>.RuneDetails>.RuneButton{
+		border:1px solid #ccd1d1;
+		background:#f2f2f2;
+		
+		width:80%;
+		padding:8px 4px;
+		line-height:14px;
+		font-size:12px;
+		color:#222;
+	
+	
+	}
+	
+	.gameMap{
+		margin-left:8px;
+		padding-left:8px;
+		border-left:1px solid #bec4c4;
+		font-size:11px;
+		color:#242929;
+		font-weight:noraml;
+	
+	
+	
+	}
+	.gameQueueType{
+		margin-left:8px;
+		padding-left:8px;
+		
+		font-size:11px;
+		color:#242929;
+		font-weight:noraml;
+	
+	}
+	
+	.gameTime{
+		margin-left:8px;
+		padding-left:8px;
+		border-left:1px solid #bec4c4;
+		font-size:11px;
+		color:#242929;
+		font-weight:noraml;
+	
+	
+	
+	}
+	
+	.bannedchamp{
+		position:relative;
+		padding:10px 5px;
+		border-top:1px solid #cdd2d2;
+	
+	}
+	
+	.bannedchamp> div{
+		display:inline-block;
+	
+	}
+	
+	.bannedchamp>span{
+		position:absolute;
+		left:50%;
+		transform:translateX(-50%);
+		
+	}
+	.bannedchamp>.blueBanned{
+		width:45%;
+		text-align:center;
+		
+	}
+	
+	
+	.bannedchamp>.redBanned{
+		width:45%;
+		text-align:center;
+		padding-left:100px;
+		
+	}
+	
+	.bannedchamp>.blueBanned>img{
+		width:24px;
+		height:24px;
+		margin-right:5px;
+		
+	}
+	
+	.bannedchamp>.redBanned>img{
+		width:24px;
+		height:24px;
+		margin-right:5px;
+		
+	}
+	
+	
+	
+	

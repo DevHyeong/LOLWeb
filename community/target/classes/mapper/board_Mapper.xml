@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.exam.community.boardMapper">
+
+	<select id="boardlist" resultType="com.exam.community.Board">
+		select * from board order by date desc;
+	</select>
+	
+	<select id="boardViewlist" resultType="com.exam.community.Board">
+		select * from board order by view_count desc;
+	</select>
+	
+	<select id="boardLoveList" resultType="com.exam.community.Board">
+		select * from board order by voteUp-voteDown desc;
+	</select>
+	
+	
+	
+	<select id="boardSearchTitle" resultType="com.exam.community.Board" parameterType="string">
+		select * from board where title like CONCAT('%',#{content},'%')
+	</select>
+	
+	<select id="boardSearchUserid" resultType="com.exam.community.Board" parameterType="string">
+		select * from board where userid = #{content}
+	</select>
+	
+	<update id="boardVoteUp" parameterType="java.util.Map">
+		update board set voteUp = voteUp + #{count} where idx=#{index}
+	
+	</update>
+	
+	<update id="boardVoteDown" parameterType="java.util.Map">
+		update board set voteDown = voteDown + #{count} where idx=#{index}
+	
+	</update>
+	
+	<update id="boardView" parameterType="int">
+		update board set view_count = view_count + 1 where idx=#{index}
+	
+	</update>
+	
+	
+	
+	<update id="userVoteInfoInsert" parameterType="java.util.Map"> 
+		insert into board_vote (userid,board_idx,vote) values (#{userid},#{index},#{vote})
+		on duplicate key update userid = #{userid}, board_idx = #{index}, vote=#{vote}
+	</update>
+	
+	<select id="userVoteInfoRead" resultType="int">
+		select vote from board_vote where userid=#{userid} and board_idx = #{index}
+	
+	</select>
+	
+	
+	
+	
+	
+	<select id="boardRead" resultType="com.exam.community.Board" parameterType="int">
+		select * from board where idx = #{index}
+	</select>
+	
+	<insert id="boardCreate" parameterType="com.exam.community.Board">
+		
+		insert into board (idx,title,userid,content_text,date,view_count) values 
+		(#{idx},#{title},#{userid},#{content_text},#{date},#{view_count})
+		<selectKey resultType="int" keyProperty="idx" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+	
+	</insert>
+	
+	
+	<insert id="insertImage" parameterType="java.util.Map">
+		insert into image_url (userid,board_idx,image_url) values
+		(#{userid},#{board_idx},#{image_url})
+	
+	</insert>
+	
+	<delete id="deleteImage" parameterType="java.util.Map">
+		delete from image_url where userid=#{userid} and board_idx = #{board_idx} 
+		and image_url = #{image_url} 
+	</delete>
+	
+	<select id="ReadImageResource" resultType="string" parameterType="java.util.Map">
+		select image_url from image_url where userid=#{userid} and board_idx=#{board_idx}
+	</select>
+	
+	
+	
+	<update id="boardUpdate" parameterType="com.exam.community.Board">
+		update board set title = #{title}, content_text = #{content_text},
+		date = #{date} where idx = #{idx}
+	
+	</update>
+	
+	
+	<update id="boardRepeatUpdate" parameterType="java.util.Map">
+		update board set repeat_cnt = repeat_cnt + #{count} where idx=#{idx}
+	</update>
+	
+	
+	
+	
+
+</mapper>

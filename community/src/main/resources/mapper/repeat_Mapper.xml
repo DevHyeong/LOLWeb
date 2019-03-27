@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.exam.community.repeatMapper">
+	<insert id="repeatInsert" parameterType="com.exam.community.Repeat">
+		insert into board_repeat(idx,userid,nickname,date,board_idx,content) values (#{idx},
+		#{userid},#{nickname},#{date},#{board_idx},#{content});
+		
+		
+		<selectKey resultType="int" keyProperty="idx" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+	
+	</insert>
+	<select id="repeatRead" parameterType="Integer" resultType="com.exam.community.Repeat">
+		select * from board_repeat where board_idx = #{index} order by date desc
+	
+	</select>
+
+	<insert id="replyInsert" parameterType="com.exam.community.Reply">
+		insert into reply(idx,userid,nickname,date,content,board_idx,repeat_idx,pointer) values
+		(#{idx},#{userid},#{nickname},#{date},#{content},#{board_idx},#{repeat_idx},#{pointer});
+		
+		
+		<selectKey resultType="int" keyProperty="idx" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+	
+	</insert>
+	<select id="replyRead" parameterType="Integer" resultType="com.exam.community.Reply">
+		select * from reply where board_idx = #{index}
+	
+	</select>
+	
+	
+	<select id="replyReadAboutRepeat" parameterType="int" resultType="com.exam.community.Reply">
+		select * from reply where repeat_idx = #{index}
+	</select>
+	
+	
+	<delete id="replyDelete" parameterType="int">
+		delete from reply where idx = #{index}
+	</delete>
+	
+	<delete id="repeatDelete" parameterType="int">
+		delete from _repeat where idx = #{index}
+	</delete>
+	
+	
+	
+	
+</mapper>
