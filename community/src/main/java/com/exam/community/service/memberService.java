@@ -21,9 +21,14 @@ public class memberService implements ImemberService, UserDetailsService {
 	
 	@Override
 	public void memberJoin(member member) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stubS
 		String password = member.getPassword();
 		member.setPassword(passwordEncoder.encode(password));
+		
+		if(member.getType() == null) {
+			member.setType("normal");
+			
+		}
 		
 		dao.memberJoin(member);
 	}

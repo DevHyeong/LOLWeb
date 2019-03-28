@@ -1001,6 +1001,18 @@
 				
 			}
 		}
+		$(function(){
+			$(".RefeshBtn").click(function(){
+				location.reload();
+
+				$(this).text("갱신 불가");
+				
+				
+			});
+			
+			
+		});
+		
 		
 		
 	
@@ -1033,7 +1045,7 @@
 				</div>
 				
 				<div style="margin-top:7px;">
-					<button class="SemiRound Blue">전적 갱신</button>
+					<button class="SemiRound RefeshBtn Blue">전적 갱신</button>
 					<button class="SemiRound IngameBtn">인게임 정보</button>
 				
 				</div>

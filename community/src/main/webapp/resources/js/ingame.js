@@ -221,7 +221,7 @@ $(function(){
 				
 				html +="</div>";
 				
-				alert("test");
+				
 				node.html(html);
 				
 				
@@ -244,7 +244,7 @@ $(function(){
 				node.html(html);
 				
 				
-				alert("error");
+				
 			}
 			
 			

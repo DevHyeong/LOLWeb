@@ -40,7 +40,7 @@ import com.fasterxml.jackson.databind.type.TypeFactory;
 public class RiotGames {
 	
 	private String summonersName;
-	private String APIKey = "RGAPI-908fe0e2-9cdb-4b1d-aa13-5fc068121bba";
+	private String APIKey = "RGAPI-49f7b49a-d3ba-4b8c-bc17-4bbab94813bf";
 	
 	
 	public RiotGames() {

@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+      
+    
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -95,7 +100,14 @@
 			height:40px;
 		}
 		
+		.login-error{
+			display:block;
+			color:red;
+			font-size:12px;
+			margin-bottom:10px;
 		
+		
+		}
 		
 	</style>
 
@@ -119,9 +131,10 @@
 			<div class="form-group">
 				<input type="password" name="password" class="form-control" placeholder="비밀번호">
 			</div>
-			
-			
-			
+			<c:if test="${not empty SPRING_SECURITY_LAST_EXCEPTION }">
+				<span class="login-error">${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}</span>
+				<c:remove var="SPRING_SECURITY_LAST_EXCEPTION" scope="session"/>
+			</c:if>
 			
 			<div class="form-group">
 				<button type="submit" class="sign-up">로그인</button>

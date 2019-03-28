@@ -39,14 +39,14 @@ public class MemberAuthenticationProvider implements AuthenticationProvider{
 		//userid가 없다면
 		if(memberInfo == null) {
 			
-			throw new UsernameNotFoundException(authToken.getName());
+			throw new UsernameNotFoundException("해당하는 아이디가 없습니다.");
 			
 		}
 		
 		//userid는 있으나 비밀번호가 일치하지 않을 경우
 		if(!passwordEncoder.matches((String) authToken.getCredentials(),memberInfo.getPassword())) {
-			System.out.println("설마여기?");
-			throw new BadCredentialsException("비밀번호가 일치하지 않습니다");
+			
+			throw new BadCredentialsException("비밀번호가 일치하지 않습니다.");
 			
 		}
 		

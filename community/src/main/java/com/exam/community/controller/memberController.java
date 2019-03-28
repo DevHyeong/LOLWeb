@@ -43,7 +43,25 @@ public class memberController {
 	@RequestMapping("/login")
 	public String memberLogin(HttpServletRequest request,HttpSession session
 			,Model model) throws UnsupportedEncodingException {
+		
+		if(session.getAttribute("user") !=null) {
+			return "redirect:/";
+		}
+		
+		
 		String referrer = request.getHeader("Referer");
+		String address = "https://localhost:8443";
+		String join = address+"/join";
+		String loginError = address+"/login?error";
+		if(referrer !=null) {
+			if(referrer.equals(join) || referrer.equals(loginError)) {
+				System.out.println("들어옴");
+				referrer = null;
+				
+				
+			}
+		}
+		//if(referrer)
 		request.getSession().setAttribute("prevPage", referrer);
 		
 		String clientId = "vTN_NsjFCziZCQWHhy5h";//애플리케이션 클라이언트 아이디값";
@@ -64,7 +82,11 @@ public class memberController {
 	}
 	
 	@RequestMapping("/join")
-	public String memberJoin() {
+	public String memberJoin(HttpSession session) {
+		if(session.getAttribute("user") !=null) {
+			return "redirect:/";
+		}
+		
 		
 		return "/member/join";
 	}
@@ -74,7 +96,8 @@ public class memberController {
 		//member user = service.memberLogin(member);
 		
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		Authentication auth1 = new MemberAuthenticationProvider().authenticate(auth);
+		Authentication result = new MemberAuthenticationProvider().authenticate(auth);
+		
 		
 		//이밑의 코드는 실행이 안됨. xml설정파일에서 조건값에 따라 실행하기 떄문,
 		
@@ -90,6 +113,10 @@ public class memberController {
 		return "redirect:/login";
 		
 	}
+	
+	
+	
+	
 	@RequestMapping(value="/idcheck", method = RequestMethod.POST)
 	@ResponseBody
 	public Map<Object, Object> idcheck(@RequestBody String userid){//HttpServletRequest request){

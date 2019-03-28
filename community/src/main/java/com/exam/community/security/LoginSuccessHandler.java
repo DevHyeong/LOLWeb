@@ -35,7 +35,7 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
 		HttpSession session = request.getSession();
 		member user = (member)authentication.getPrincipal();
 		
-		System.out.println("여기안들어오시나");
+		
 		
 		if(session !=null) {
 			String redirectUrl = (String) session.getAttribute("prevPage");
